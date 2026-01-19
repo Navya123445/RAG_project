@@ -132,8 +132,8 @@ def classify_color(rgb: Tuple[float, float, float], text: str) -> str:
         return "AMOUNT"  # Yellow
     if r < 0.6 and g > 0.75 and b < 0.6:
         return "PERCENT"  # Green
-    if 0.65 < r < 0.85 and 0.65 < g < 0.85 and 0.65 < b < 0.85:
-        return "DATE"  # Light Gray
+    if 0.5 < r < 0.9 and 0.5 < g < 0.9 and 0.5 < b < 0.9 and abs(r-g) < 0.15 and abs(g-b) < 0.15:
+        return "DATE"  # Light Gray (broader range)
     if 0.7 < r < 0.9 and g > 0.85 and 0.7 < b < 0.9:
         return "DURATION"  # Light Green
     if r > 0.85 and 0.65 < g < 0.9 and b > 0.75:
